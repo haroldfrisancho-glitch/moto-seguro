@@ -27,9 +27,6 @@ nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--surface) 
 .primary{background:var(--accent);color:#fff}
 .secondary{background:var(--surface2);color:var(--text);border:1px solid var(--line)}
 .qr{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow);text-align:center}
-.qrbox{width:190px;height:190px;margin:auto;background:var(--surface2);border:3px dashed var(--line);display:flex;align-items:center;justify-content:center}
-.qrbox:after{content:"📷";font-size:45px}
-.qr small{display:block;color:var(--muted);margin-top:13px}
 section{margin-top:55px}
 section h2{font-size:32px;margin:0 0 8px;letter-spacing:-1px}
 section>p{color:var(--muted)}
@@ -69,7 +66,7 @@ section>p{color:var(--muted)}
 .notice{font-size:13px;color:var(--muted);margin-top:10px}
 .footer{border-top:1px solid var(--line);margin-top:65px;padding-top:25px;color:var(--muted);font-size:13px}
 .inp{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--surface2);color:var(--text)}
-@media(max-width:760px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.adminlist{grid-template-columns:repeat(2,1fr)}.hero h1{letter-spacing:-2px}.qrbox{width:160px;height:160px}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.adminlist{grid-template-columns:repeat(2,1fr)}.hero h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
@@ -98,9 +95,8 @@ section>p{color:var(--muted)}
 <p>Moto Seguro es una comunidad independiente creada para facilitar la coordinación entre usuarios y pilotos, buscando ofrecer una experiencia de movilidad <b>más organizada, segura y confiable</b>.</p>
 </div>
 <div class="qr">
-<div class="qrbox" aria-label="Espacio para foto"></div>
+<img src="logo.jpeg" alt="Logo Moto Seguro" style="width:100%;max-width:220px;border-radius:20px;display:block;margin:0 auto 14px">
 <b>Conoce Moto Seguro</b>
-<small>En este espacio agregaremos una foto.</small>
 </div>
 </section>
 
@@ -199,7 +195,7 @@ section>p{color:var(--muted)}
 <section style="margin-top:10px">
 <div class="eyebrow">Área privada</div>
 <h1 style="font-size:42px;margin:8px 0">Administrar contenido</h1>
-<p style="color:var(--muted)">Aquí podrás agregar referencias, fotos y videos promocionales para mostrarlos en la página.</p>
+<p style="color:var(--muted)">Aquí podrás probar fotos y videos. Para que los vea todo el mundo, súbelos como archivos junto al index.html.</p>
 <div class="adminbox">
 <div class="adminrow">
 <button class="btn primary" onclick="document.getElementById('upload').click()">📷 Agregar fotos o videos</button>
@@ -207,8 +203,8 @@ section>p{color:var(--muted)}
 <button class="btn secondary" onclick="logoutAdmin()">Cerrar sesión</button>
 </div>
 <input id="upload" type="file" accept="image/*,video/*" multiple style="display:none" onchange="addImages(event)">
-<div class="upload">Selecciona tus <b>fotos o videos promocionales</b> desde el celular.
-<div class="notice">En esta versión las imágenes se guardan localmente en el navegador.</div>
+<div class="upload">Selecciona tus <b>fotos o videos</b> desde el celular.
+<div class="notice">Lo que subas aquí solo se ve en tu navegador.</div>
 </div>
 <div class="adminlist" id="adminlist"></div>
 </div>
@@ -219,11 +215,8 @@ section>p{color:var(--muted)}
 </div>
 
 <script>
-const demo=[
-{text:'La coordinación fue rápida y sencilla. 👍',name:'Cliente 01'},
-{text:'Me pareció una alternativa muy práctica.',name:'Cliente 02'},
-{text:'Buena comunicación por WhatsApp.',name:'Cliente 03'}
-];
+const demo=[];
+const REFS=['ref1.jpeg','ref2.jpeg','ref3.jpeg','ref4.jpeg'];
 
 const ADMIN_USER='admin';
 const ADMIN_PASS='motocusco2026';
@@ -271,6 +264,12 @@ demo.forEach(x=>{
 const d=document.createElement('div');
 d.className='review';
 d.innerHTML='<div class="shot"><div class="fakechat"><div class="head">WhatsApp · Referencia</div><div class="bubble">'+x.text+'</div></div></div><div class="caption"><div class="stars">★★★★★</div><b>'+x.name+'</b></div>';
+r.appendChild(d);
+});
+REFS.forEach(src=>{
+const d=document.createElement('div');
+d.className='review';
+d.innerHTML='<img src="'+src+'" alt="Referencia de la comunidad"><div class="caption"><div class="stars">★★★★★</div><b>Referencia de la comunidad</b></div>';
 r.appendChild(d);
 });
 imgs.forEach(item=>{
