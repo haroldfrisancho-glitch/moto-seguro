@@ -186,8 +186,8 @@ section>p{color:var(--muted)}
 <div class="adminbox" style="width:min(420px,100%)">
 <h2 style="margin-top:0">🔐 Acceso administrador</h2>
 <p style="color:var(--muted)">Ingresa tus datos para administrar la página.</p>
-<input id="adminUser" class="inp" type="text" placeholder="Usuario" autocomplete="username">
-<input id="adminPass" class="inp" type="password" placeholder="Contraseña" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginAdmin()">
+<input id="adminUser" class="inp" type="text" placeholder="Usuario" autocomplete="username" autocapitalize="off" autocorrect="off" spellcheck="false">
+<input id="adminPass" class="inp" type="password" placeholder="Contraseña" autocomplete="current-password" autocapitalize="off" autocorrect="off" onkeydown="if(event.key==='Enter')loginAdmin()">
 <button class="btn primary" style="margin-top:8px;width:100%" onclick="loginAdmin()">Ingresar</button>
 <button class="btn secondary" style="margin-top:8px;width:100%" onclick="closeLogin()">Cancelar</button>
 <div id="loginError" style="color:#d94a3a;font-size:13px;margin-top:10px"></div>
@@ -226,7 +226,7 @@ const demo=[
 ];
 
 const ADMIN_USER='admin';
-const ADMIN_PASS='MotoCusco#7421';
+const ADMIN_PASS='motocusco2026';
 let logged=false;
 
 let imgs=[];
@@ -249,9 +249,9 @@ setTimeout(()=>document.getElementById('adminUser').focus(),50);
 function closeLogin(){document.getElementById('adminLogin').style.display='none'}
 
 function loginAdmin(){
-const u=document.getElementById('adminUser').value.trim();
-const p=document.getElementById('adminPass').value;
-if(u===ADMIN_USER&&p===ADMIN_PASS){logged=true;closeLogin();showAdmin()}
+const u=document.getElementById('adminUser').value.trim().toLowerCase();
+const p=document.getElementById('adminPass').value.trim();
+if(u===ADMIN_USER.toLowerCase()&&p===ADMIN_PASS){logged=true;closeLogin();showAdmin()}
 else document.getElementById('loginError').textContent='Usuario o contraseña incorrectos.';
 }
 
