@@ -40,11 +40,11 @@ section>p{color:var(--muted)}
 .faq summary:after{content:"+";color:var(--accent2);font-size:22px}
 .faq details[open] summary:after{content:"−"}
 .faq p{color:var(--muted);line-height:1.6;margin:0 4px 18px}
-.reels{display:flex;gap:14px;overflow:auto;padding:12px 2px 18px;scroll-snap-type:x mandatory}
-.review{min-width:280px;max-width:340px;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;scroll-snap-align:start;box-shadow:var(--shadow)}
-.review .caption{padding:15px}
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:start;margin-top:20px}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.review img{width:100%;height:auto;display:block}
+.review .caption{padding:12px 15px}
 .stars{color:#f3a400;letter-spacing:2px}
-.review img{width:100%;height:330px;object-fit:cover;display:block}
 .footer{border-top:1px solid var(--line);margin-top:65px;padding-top:25px;color:var(--muted);font-size:13px}
 @media(max-width:760px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}}
 </style>
@@ -56,7 +56,7 @@ section>p{color:var(--muted)}
 <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ir al inicio">🏍️ MOTO <span>SEGURO CUSCO</span></div>
 <div class="socialtop">
 <a class="ig" href="#" onclick="alert('Aquí irá el enlace real de Instagram.');return false">📸 IG</a>
-<a class="tk" href="#" onclick="alert('Aquí irá el enlace real de TikTok.');return false">🎵 TikTok</a>
+<a class="tk" href="https://www.tiktok.com/@henry_quintana1?_r=1&amp;_t=ZS-9AL22e2lvro" target="_blank" rel="noopener">🎵 TikTok</a>
 </div>
 </nav>
 
@@ -109,17 +109,6 @@ section>p{color:var(--muted)}
 </div>
 </section>
 
-<section id="pilotos">
-<div class="card">
-<div class="eyebrow">¿Quieres ser piloto?</div>
-<h2>🏍️ Forma parte de Moto Seguro</h2>
-<p>Si eres motociclista y quieres formar parte de nuestra comunidad como piloto, puedes registrarte y conocer el proceso de evaluación.</p>
-<h3>Buscamos pilotos que sean:</h3>
-<p>✔️ Responsables<br>✔️ Respetuosos<br>✔️ Comprometidos<br>✔️ Con documentación correspondiente<br>✔️ Con vehículo en condiciones adecuadas<br>✔️ Dispuestos a cumplir las reglas de la comunidad</p>
-<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace para personas interesadas en ser pilotos.');return false">🟢 Quiero ser piloto</a>
-</div>
-</section>
-
 <section id="referencias">
 <h2>⭐ Referencias de la comunidad</h2>
 <p>Conoce experiencias compartidas por integrantes de Moto Seguro.</p>
@@ -145,6 +134,17 @@ section>p{color:var(--muted)}
 </div>
 </section>
 
+<section id="pilotos">
+<div class="card">
+<div class="eyebrow">¿Quieres ser piloto?</div>
+<h2>🏍️ Forma parte de Moto Seguro</h2>
+<p>Si eres motociclista y quieres formar parte de nuestra comunidad como piloto, puedes registrarte y conocer el proceso de evaluación.</p>
+<h3>Buscamos pilotos que sean:</h3>
+<p>✔️ Responsables<br>✔️ Respetuosos<br>✔️ Comprometidos<br>✔️ Con documentación correspondiente<br>✔️ Con vehículo en condiciones adecuadas<br>✔️ Dispuestos a cumplir las reglas de la comunidad</p>
+<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace para personas interesadas en ser pilotos.');return false">🟢 Quiero ser piloto</a>
+</div>
+</section>
+
 <div class="footer">
 <h3>ℹ️ Sobre Moto Seguro</h3>
 <p>Moto Seguro es una <b>comunidad independiente</b>. No pertenece, no representa ni está afiliada a ninguna universidad, institución pública o empresa, salvo que exista una autorización o acuerdo expresamente comunicado.</p>
@@ -160,7 +160,7 @@ const r=document.getElementById('reviews');
 REFS.forEach(src=>{
 const d=document.createElement('div');
 d.className='review';
-d.innerHTML='<img src="'+src+'" alt="Referencia de la comunidad"><div class="caption"><div class="stars">★★★★★</div><b>Referencia de la comunidad</b></div>';
+d.innerHTML='<img src="'+src+'" alt="Referencia de la comunidad"><div class="caption"><div class="stars">★★★★★</div></div>';
 r.appendChild(d);
 });
 </script>
