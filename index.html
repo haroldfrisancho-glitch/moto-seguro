@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Moto Seguro Cusco — Comunidad</title>
 <style>
-:root{color-scheme:light dark;--bg:#fff8ef;--surface:#fff;--surface2:#fff1df;--text:#241812;--muted:#74655d;--line:#ead8c7;--accent:#d94a3a;--accent2:#8b2d24;--gold:#e5a72b;--purple:#70479a;--shadow:0 12px 35px #5b2b1718}
+:root{color-scheme:light dark;--bg:#fff8ef;--surface:#fff;--surface2:#fff1df;--text:#241812;--muted:#74655d;--line:#ead8c7;--accent:#d94a3a;--accent2:#8b2d24;--shadow:0 12px 35px #5b2b1718}
 @media(prefers-color-scheme:dark){:root{--bg:#0d1115;--surface:#151b20;--surface2:#20282f;--text:#f5f7f8;--muted:#aab3bb;--line:#303941;--shadow:0 12px 35px #00000045}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
 #app{min-height:100vh;background:radial-gradient(circle at 10% 5%,#f7d98b55 0 15%,transparent 35%),radial-gradient(circle at 90% 12%,#8e5bb533 0 13%,transparent 32%),var(--bg)}
 nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-weight:900;letter-spacing:-.5px}
+.brand{font-weight:900;letter-spacing:-.5px;cursor:pointer}
 .brand span{color:var(--accent)}
-.navright{display:flex;align-items:center;gap:8px}
-.socialtop{display:flex;gap:7px}
-.socialtop a{display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border-radius:999px;color:#fff;text-decoration:none;font-size:13px;font-weight:850;box-shadow:0 5px 14px #00000018}
+.navright,.socialtop{display:flex;align-items:center;gap:8px}
+.socialtop a{display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border-radius:999px;color:#fff;text-decoration:none;font-size:13px;font-weight:850}
 .ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
 .tk{background:#171717}
 .navbtn{border:1px solid var(--line);background:var(--surface2);color:var(--text);padding:9px 13px;border-radius:999px;cursor:pointer;font-weight:700}
@@ -25,10 +24,10 @@ nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--surface) 
 .hero h1{font-size:clamp(40px,7vw,76px);line-height:.95;margin:10px 0 18px;letter-spacing:-4px}
 .hero p{font-size:18px;color:var(--muted);max-width:620px}
 .btn{border:0;border-radius:14px;padding:13px 18px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-block}
-.primary{background:var(--accent);color:#07140e}
+.primary{background:var(--accent);color:#fff}
 .secondary{background:var(--surface2);color:var(--text);border:1px solid var(--line)}
 .qr{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow);text-align:center}
-.qrbox{width:190px;height:190px;margin:auto;background:var(--surface2);border:3px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.qrbox{width:190px;height:190px;margin:auto;background:var(--surface2);border:3px dashed var(--line);display:flex;align-items:center;justify-content:center}
 .qrbox:after{content:"📷";font-size:45px}
 .qr small{display:block;color:var(--muted);margin-top:13px}
 section{margin-top:55px}
@@ -52,12 +51,11 @@ section>p{color:var(--muted)}
 .fakechat{width:100%;background:#fff;border-radius:18px;padding:15px;color:#18201c;box-shadow:0 8px 25px #00000014}
 .fakechat .head{font-weight:850;margin-bottom:14px}
 .bubble{background:#dcf8c6;padding:11px 13px;border-radius:13px 13px 3px 13px;margin:7px 0;font-size:14px}
-.review .caption{padding:15px}
+.review .caption,.promo .caption{padding:15px}
 .stars{color:#f3a400;letter-spacing:2px}
 .review img{width:100%;height:330px;object-fit:cover;display:block}
 .promo{min-width:300px;max-width:360px;background:linear-gradient(145deg,#d94a3a,#70479a);color:#fff;border-radius:22px;overflow:hidden;scroll-snap-align:start;box-shadow:var(--shadow)}
 .promo video{width:100%;height:330px;object-fit:cover;display:block}
-.promo .caption{padding:15px}
 .admin{display:none}
 .admin.show{display:block}
 .public.hide{display:none}
@@ -70,30 +68,20 @@ section>p{color:var(--muted)}
 .adminitem button{margin:10px;width:calc(100% - 20px);padding:8px;border:0;border-radius:10px;background:#d94a3a;color:#fff;font-weight:800;cursor:pointer}
 .notice{font-size:13px;color:var(--muted);margin-top:10px}
 .footer{border-top:1px solid var(--line);margin-top:65px;padding-top:25px;color:var(--muted);font-size:13px}
-@media(max-width:760px){
-.hero{grid-template-columns:1fr}
-.cards{grid-template-columns:1fr}
-.adminlist{grid-template-columns:repeat(2,1fr)}
-.hero h1{letter-spacing:-2px}
-.qrbox{width:160px;height:160px}
-}
+.inp{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--surface2);color:var(--text)}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.adminlist{grid-template-columns:repeat(2,1fr)}.hero h1{letter-spacing:-2px}.qrbox{width:160px;height:160px}}
 </style>
 </head>
-
 <body>
 <div id="app">
 
 <nav>
-<div class="brand" onclick="goHome()" style="cursor:pointer" title="Ir al inicio">
-🏍️ MOTO <span>SEGURO CUSCO</span>
-</div>
-
+<div class="brand" onclick="goHome()" title="Ir al inicio">🏍️ MOTO <span>SEGURO CUSCO</span></div>
 <div class="navright">
 <div class="socialtop">
-<a class="ig" href="#" onclick="alert('Aquí irá el enlace real de Instagram.')">📸 IG</a>
-<a class="tk" href="#" onclick="alert('Aquí irá el enlace real de TikTok.')">🎵 TikTok</a>
+<a class="ig" href="#" onclick="alert('Aquí irá el enlace real de Instagram.');return false">📸 IG</a>
+<a class="tk" href="#" onclick="alert('Aquí irá el enlace real de TikTok.');return false">🎵 TikTok</a>
 </div>
-
 <button class="navbtn" onclick="toggleAdmin()">🔐 Panel administrador</button>
 </div>
 </nav>
@@ -103,637 +91,230 @@ section>p{color:var(--muted)}
 <div id="public" class="public">
 
 <section class="hero" style="margin-top:0">
-
 <div>
 <div class="eyebrow">Comunidad independiente</div>
-
 <h1>🏍️ Moto Seguro</h1>
-
-<h2 style="font-size:28px;margin:0 0 14px">
-Tu comunidad para movilizarte con mayor confianza
-</h2>
-
-<p>
-Moto Seguro es una comunidad independiente creada para facilitar la coordinación entre usuarios y pilotos, buscando ofrecer una experiencia de movilidad <b>más organizada, segura y confiable</b>.
-</p>
+<h2 style="font-size:28px;margin:0 0 14px">Tu comunidad para movilizarte con mayor confianza</h2>
+<p>Moto Seguro es una comunidad independiente creada para facilitar la coordinación entre usuarios y pilotos, buscando ofrecer una experiencia de movilidad <b>más organizada, segura y confiable</b>.</p>
 </div>
-
 <div class="qr">
 <div class="qrbox" aria-label="Espacio para foto"></div>
 <b>Conoce Moto Seguro</b>
 <small>En este espacio agregaremos una foto.</small>
 </div>
-
 </section>
-
 
 <section>
-
 <h2>🛡️ ¿Qué nos diferencia?</h2>
-
 <div class="cards">
-
-<div class="card">
-<div class="icon">✅</div>
-<h3>Pilotos evaluados</h3>
-<p>
-Los pilotos que desean formar parte de Moto Seguro pasan por un <b>proceso de evaluación y filtros previos</b> antes de incorporarse a la comunidad.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🔎</div>
-<h3>Verificación de información</h3>
-<p>
-Solicitamos información del piloto y de su vehículo para contar con mejores referencias al momento de integrarlo a la comunidad.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🏍️</div>
-<h3>Conductores comprometidos</h3>
-<p>
-Buscamos personas responsables, respetuosas y comprometidas con brindar un buen servicio a los integrantes.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">⭐</div>
-<h3>Referencias de la comunidad</h3>
-<p>
-Los integrantes pueden compartir sus experiencias y referencias, ayudando a mantener una comunidad basada en la confianza.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">📱</div>
-<h3>Coordinación por WhatsApp</h3>
-<p>
-La comunicación y coordinación se realiza mediante WhatsApp de manera sencilla y directa.
-</p>
-</div>
-
+<div class="card"><div class="icon">✅</div><h3>Pilotos evaluados</h3><p>Los pilotos que desean formar parte de Moto Seguro pasan por un <b>proceso de evaluación y filtros previos</b> antes de incorporarse a la comunidad.</p></div>
+<div class="card"><div class="icon">🔎</div><h3>Verificación de información</h3><p>Solicitamos información del piloto y de su vehículo para contar con mejores referencias al momento de integrarlo a la comunidad.</p></div>
+<div class="card"><div class="icon">🏍️</div><h3>Conductores comprometidos</h3><p>Buscamos personas responsables, respetuosas y comprometidas con brindar un buen servicio a los integrantes.</p></div>
+<div class="card"><div class="icon">⭐</div><h3>Referencias de la comunidad</h3><p>Los integrantes pueden compartir sus experiencias y referencias, ayudando a mantener una comunidad basada en la confianza.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Coordinación por WhatsApp</h3><p>La comunicación y coordinación se realiza mediante WhatsApp de manera sencilla y directa.</p></div>
 </div>
 </section>
-
 
 <section id="seleccion">
-
 <h2>🔐 ¿Cómo se seleccionan los pilotos?</h2>
-
-<p>
-Queremos que quienes formen parte de Moto Seguro cumplan ciertos requisitos.
-</p>
-
+<p>Queremos que quienes formen parte de Moto Seguro cumplan ciertos requisitos.</p>
 <div class="cards">
-
-<div class="card">
-<h3>01. Registro del piloto</h3>
-<p>
-El interesado proporciona sus datos y la información necesaria para postular.
-</p>
+<div class="card"><h3>01. Registro del piloto</h3><p>El interesado proporciona sus datos y la información necesaria para postular.</p></div>
+<div class="card"><h3>02. Revisión de información</h3><p>Se revisan los datos proporcionados y la información relacionada con el piloto y su vehículo.</p></div>
+<div class="card"><h3>03. Evaluación</h3><p>Se evalúan aspectos como responsabilidad, documentación e información proporcionada.</p></div>
+<div class="card"><h3>04. Aprobación</h3><p>Los pilotos que cumplen con los criterios establecidos pueden ser incorporados a la comunidad.</p></div>
 </div>
-
-<div class="card">
-<h3>02. Revisión de información</h3>
-<p>
-Se revisan los datos proporcionados y la información relacionada con el piloto y su vehículo.
-</p>
-</div>
-
-<div class="card">
-<h3>03. Evaluación</h3>
-<p>
-Se evalúan aspectos como responsabilidad, documentación e información proporcionada.
-</p>
-</div>
-
-<div class="card">
-<h3>04. Aprobación</h3>
-<p>
-Los pilotos que cumplen con los criterios establecidos pueden ser incorporados a la comunidad.
-</p>
-</div>
-
-</div>
-
-<div class="card" style="margin-top:14px">
-<b>Importante:</b> formar parte de Moto Seguro no significa que la comunidad garantice la conducta o seguridad absoluta de un piloto. La información proporcionada sirve como referencia para una mejor coordinación.
-</div>
-
+<div class="card" style="margin-top:14px"><b>Importante:</b> formar parte de Moto Seguro no significa que la comunidad garantice la conducta o seguridad absoluta de un piloto. La información proporcionada sirve como referencia para una mejor coordinación.</div>
 </section>
-
 
 <section id="como-funciona">
-
 <h2>💬 ¿Cómo funciona?</h2>
-
 <p>Es muy sencillo:</p>
-
 <div class="cards">
-
-<div class="card">
-<h3>1️⃣ Conoce la comunidad</h3>
-<p>Revisa nuestra información y referencias.</p>
-</div>
-
-<div class="card">
-<h3>2️⃣ Comunícate con nosotros</h3>
-<p>Utiliza el botón de WhatsApp para realizar tus consultas.</p>
-</div>
-
-<div class="card">
-<h3>3️⃣ Coordina con la comunidad</h3>
-<p>La coordinación se realiza directamente mediante WhatsApp.</p>
-</div>
-
-<div class="card">
-<h3>4️⃣ Comparte tu experiencia</h3>
-<p>Tus referencias ayudan a que la comunidad siga creciendo.</p>
-</div>
-
+<div class="card"><h3>1️⃣ Conoce la comunidad</h3><p>Revisa nuestra información y referencias.</p></div>
+<div class="card"><h3>2️⃣ Comunícate con nosotros</h3><p>Utiliza el botón de WhatsApp para realizar tus consultas.</p></div>
+<div class="card"><h3>3️⃣ Coordina con la comunidad</h3><p>La coordinación se realiza directamente mediante WhatsApp.</p></div>
+<div class="card"><h3>4️⃣ Comparte tu experiencia</h3><p>Tus referencias ayudan a que la comunidad siga creciendo.</p></div>
 </div>
 </section>
-
 
 <section id="pilotos">
-
 <div class="card">
-
 <div class="eyebrow">¿Quieres ser piloto?</div>
-
 <h2>🏍️ Forma parte de Moto Seguro</h2>
-
-<p>
-Si eres motociclista y quieres formar parte de nuestra comunidad como piloto, puedes registrarte y conocer el proceso de evaluación.
-</p>
-
+<p>Si eres motociclista y quieres formar parte de nuestra comunidad como piloto, puedes registrarte y conocer el proceso de evaluación.</p>
 <h3>Buscamos pilotos que sean:</h3>
-
-<p>
-✔️ Responsables<br>
-✔️ Respetuosos<br>
-✔️ Comprometidos<br>
-✔️ Con documentación correspondiente<br>
-✔️ Con vehículo en condiciones adecuadas<br>
-✔️ Dispuestos a cumplir las reglas de la comunidad
-</p>
-
-<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace para personas interesadas en ser pilotos.')">
-🟢 Quiero ser piloto
-</a>
-
+<p>✔️ Responsables<br>✔️ Respetuosos<br>✔️ Comprometidos<br>✔️ Con documentación correspondiente<br>✔️ Con vehículo en condiciones adecuadas<br>✔️ Dispuestos a cumplir las reglas de la comunidad</p>
+<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace para personas interesadas en ser pilotos.');return false">🟢 Quiero ser piloto</a>
 </div>
-
 </section>
-
 
 <section id="referencias">
-
 <h2>⭐ Referencias de la comunidad</h2>
-
-<p>
-Conoce experiencias compartidas por integrantes de Moto Seguro.
-</p>
-
+<p>Conoce experiencias compartidas por integrantes de Moto Seguro.</p>
 <div class="reels" id="reviews"></div>
-
 </section>
-
 
 <section id="comunidad">
-
 <div class="card" style="text-align:center;padding:32px">
-
 <div class="eyebrow">¿Quieres conocer Moto Seguro?</div>
-
 <h2>Únete a nuestra comunidad de WhatsApp</h2>
-
-<p>
-Conoce cómo funciona, realiza tus consultas y recibe información sobre la comunidad.
-</p>
-
-<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace real del grupo general de WhatsApp.')">
-🟢 UNIRME AL GRUPO GENERAL
-</a>
-
+<p>Conoce cómo funciona, realiza tus consultas y recibe información sobre la comunidad.</p>
+<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace real del grupo general de WhatsApp.');return false">🟢 UNIRME AL GRUPO GENERAL</a>
 </div>
-
 </section>
-
 
 <section id="faq">
-
 <h2>Preguntas frecuentes</h2>
-
 <div class="faq">
-
-<details>
-<summary>¿Qué es Moto Seguro?</summary>
-<p>
-Moto Seguro es una comunidad independiente enfocada en facilitar la comunicación y coordinación entre sus integrantes.
-</p>
-</details>
-
-<details>
-<summary>¿Cómo puedo formar parte?</summary>
-<p>
-Solo revisa la información de esta página y utiliza el botón de WhatsApp para acceder al canal de la comunidad.
-</p>
-</details>
-
-<details>
-<summary>¿Cómo funciona la coordinación?</summary>
-<p>
-La comunicación y coordinación se realiza mediante WhatsApp.
-</p>
-</details>
-
-<details>
-<summary>¿Puedo ver referencias antes de unirme?</summary>
-<p>
-Sí. En la sección de referencias encontrarás experiencias compartidas por integrantes de la comunidad.
-</p>
-</details>
-
+<details><summary>¿Qué es Moto Seguro?</summary><p>Moto Seguro es una comunidad independiente enfocada en facilitar la comunicación y coordinación entre sus integrantes.</p></details>
+<details><summary>¿Cómo puedo formar parte?</summary><p>Solo revisa la información de esta página y utiliza el botón de WhatsApp para acceder al canal de la comunidad.</p></details>
+<details><summary>¿Cómo funciona la coordinación?</summary><p>La comunicación y coordinación se realiza mediante WhatsApp.</p></details>
+<details><summary>¿Puedo ver referencias antes de unirme?</summary><p>Sí. En la sección de referencias encontrarás experiencias compartidas por integrantes de la comunidad.</p></details>
 </div>
 </section>
-
 
 <div class="footer">
-
 <h3>ℹ️ Sobre Moto Seguro</h3>
-
-<p>
-Moto Seguro es una <b>comunidad independiente</b>. No pertenece, no representa ni está afiliada a ninguna universidad, institución pública o empresa, salvo que exista una autorización o acuerdo expresamente comunicado.
-</p>
-
+<p>Moto Seguro es una <b>comunidad independiente</b>. No pertenece, no representa ni está afiliada a ninguna universidad, institución pública o empresa, salvo que exista una autorización o acuerdo expresamente comunicado.</p>
 </div>
 
 </div>
-
 
 <!-- LOGIN ADMINISTRADOR -->
-
-<div id="adminLogin"
-style="position:fixed;inset:0;background:#0009;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px">
-
-<div class="adminbox" style="width:min(420px,100%);background:var(--surface)">
-
+<div id="adminLogin" style="position:fixed;inset:0;background:#0009;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px">
+<div class="adminbox" style="width:min(420px,100%)">
 <h2 style="margin-top:0">🔐 Acceso administrador</h2>
-
-<p style="color:var(--muted)">
-Ingresa tus datos para administrar la página.
-</p>
-
-<input
-id="adminUser"
-type="text"
-placeholder="Usuario"
-autocomplete="username"
-style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--surface2);color:var(--text)"
->
-
-<input
-id="adminPass"
-type="password"
-placeholder="Contraseña"
-autocomplete="current-password"
-style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--surface2);color:var(--text)"
-onkeydown="if(event.key==='Enter')loginAdmin()"
->
-
-<button
-class="btn primary"
-style="margin-top:8px;width:100%"
-onclick="loginAdmin()">
-Ingresar
-</button>
-
-<button
-class="btn secondary"
-style="margin-top:8px;width:100%"
-onclick="closeLogin()">
-Cancelar
-</button>
-
-<div
-id="loginError"
-style="color:#d94a3a;font-size:13px;margin-top:10px">
-</div>
-
+<p style="color:var(--muted)">Ingresa tus datos para administrar la página.</p>
+<input id="adminUser" class="inp" type="text" placeholder="Usuario" autocomplete="username">
+<input id="adminPass" class="inp" type="password" placeholder="Contraseña" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginAdmin()">
+<button class="btn primary" style="margin-top:8px;width:100%" onclick="loginAdmin()">Ingresar</button>
+<button class="btn secondary" style="margin-top:8px;width:100%" onclick="closeLogin()">Cancelar</button>
+<div id="loginError" style="color:#d94a3a;font-size:13px;margin-top:10px"></div>
 </div>
 </div>
-
 
 <!-- PANEL ADMIN -->
-
 <div id="admin" class="admin">
-
 <section style="margin-top:10px">
-
 <div class="eyebrow">Área privada</div>
-
-<h1 style="font-size:42px;margin:8px 0">
-Administrar contenido
-</h1>
-
-<p style="color:var(--muted)">
-Aquí podrás agregar el logo, referencias, fotos y videos promocionales para mostrarlos en la página.
-</p>
-
+<h1 style="font-size:42px;margin:8px 0">Administrar contenido</h1>
+<p style="color:var(--muted)">Aquí podrás agregar referencias, fotos y videos promocionales para mostrarlos en la página.</p>
 <div class="adminbox">
-
 <div class="adminrow">
-
-<button
-class="btn primary"
-onclick="document.getElementById('upload').click()">
-📷 Agregar fotos o videos
-</button>
-
-<button
-class="btn secondary"
-onclick="clearAll()">
-Vaciar demo
-</button>
-
+<button class="btn primary" onclick="document.getElementById('upload').click()">📷 Agregar fotos o videos</button>
+<button class="btn secondary" onclick="clearAll()">Vaciar demo</button>
+<button class="btn secondary" onclick="logoutAdmin()">Cerrar sesión</button>
 </div>
-
-<input
-id="upload"
-type="file"
-accept="image/*,video/*"
-multiple
-style="display:none"
-onchange="addImages(event)"
->
-
-<div class="upload">
-
-Selecciona tus <b>fotos o videos promocionales</b> desde el celular.
-
-<div class="notice">
-En esta versión las imágenes se guardan localmente en el navegador.
+<input id="upload" type="file" accept="image/*,video/*" multiple style="display:none" onchange="addImages(event)">
+<div class="upload">Selecciona tus <b>fotos o videos promocionales</b> desde el celular.
+<div class="notice">En esta versión las imágenes se guardan localmente en el navegador.</div>
 </div>
-
-</div>
-
 <div class="adminlist" id="adminlist"></div>
-
 </div>
-
 </section>
-
 </div>
 
 </main>
 </div>
 
-
 <script>
-
 const demo=[
-{
-text:'La coordinación fue rápida y sencilla. 👍',
-name:'Cliente 01'
-},
-{
-text:'Me pareció una alternativa muy práctica.',
-name:'Cliente 02'
-},
-{
-text:'Buena comunicación por WhatsApp.',
-name:'Cliente 03'
-}
+{text:'La coordinación fue rápida y sencilla. 👍',name:'Cliente 01'},
+{text:'Me pareció una alternativa muy práctica.',name:'Cliente 02'},
+{text:'Buena comunicación por WhatsApp.',name:'Cliente 03'}
 ];
 
 const ADMIN_USER='admin';
-const ADMIN_PASS='MotoSeguro2026';
+const ADMIN_PASS='MotoCusco#7421';
+let logged=false;
 
-let imgs=JSON.parse(
-localStorage.getItem('ms_imgs')||'[]'
-);
+let imgs=[];
+try{imgs=JSON.parse(localStorage.getItem('ms_imgs')||'[]')}catch(e){imgs=[]}
 
+function saveImgs(){
+try{localStorage.setItem('ms_imgs',JSON.stringify(imgs))}
+catch(e){alert('No se pudo guardar: el archivo es muy pesado para el navegador.')}
+}
 
 function toggleAdmin(){
-
+if(logged){showAdmin();return}
 document.getElementById('adminLogin').style.display='flex';
-
 document.getElementById('adminUser').value='';
-
 document.getElementById('adminPass').value='';
-
 document.getElementById('loginError').textContent='';
-
-setTimeout(
-()=>document.getElementById('adminUser').focus(),
-50
-);
-
+setTimeout(()=>document.getElementById('adminUser').focus(),50);
 }
 
-
-function closeLogin(){
-
-document.getElementById('adminLogin').style.display='none';
-
-}
-
+function closeLogin(){document.getElementById('adminLogin').style.display='none'}
 
 function loginAdmin(){
-
-const u=document.getElementById('adminUser').value;
-
+const u=document.getElementById('adminUser').value.trim();
 const p=document.getElementById('adminPass').value;
+if(u===ADMIN_USER&&p===ADMIN_PASS){logged=true;closeLogin();showAdmin()}
+else document.getElementById('loginError').textContent='Usuario o contraseña incorrectos.';
+}
 
-if(u===ADMIN_USER && p===ADMIN_PASS){
-
-document.getElementById('adminLogin').style.display='none';
-
+function showAdmin(){
+if(!logged)return;
 document.getElementById('public').classList.add('hide');
-
 document.getElementById('admin').classList.add('show');
-
-document.getElementById('loginError').textContent='';
-
-}else{
-
-document.getElementById('loginError').textContent=
-'Usuario o contraseña incorrectos.';
-
+window.scrollTo({top:0});
 }
 
-}
-
+function logoutAdmin(){logged=false;goHome()}
 
 function render(){
-
 const r=document.getElementById('reviews');
-
 r.innerHTML='';
-
 demo.forEach(x=>{
-
 const d=document.createElement('div');
-
 d.className='review';
-
-d.innerHTML=
-'<div class="shot">'+
-'<div class="fakechat">'+
-'<div class="head">WhatsApp · Referencia</div>'+
-'<div class="bubble">'+x.text+'</div>'+
-'</div>'+
-'</div>'+
-'<div class="caption">'+
-'<div class="stars">★★★★★</div>'+
-'<b>'+x.name+'</b>'+
-'</div>';
-
+d.innerHTML='<div class="shot"><div class="fakechat"><div class="head">WhatsApp · Referencia</div><div class="bubble">'+x.text+'</div></div></div><div class="caption"><div class="stars">★★★★★</div><b>'+x.name+'</b></div>';
 r.appendChild(d);
-
 });
-
-
-imgs.forEach((item,i)=>{
-
+imgs.forEach(item=>{
 const d=document.createElement('div');
-
-d.className=
-item.type==='video'?'promo':'review';
-
-if(item.type==='video'){
-
-d.innerHTML=
-'<video src="'+item.src+'" controls playsinline></video>'+
-'<div class="caption">'+
-'<b>🎬 Promoción Moto Seguro</b>'+
-'<p>Contenido de nuestra comunidad</p>'+
-'</div>';
-
-}else{
-
-d.innerHTML=
-'<img src="'+item.src+'" alt="Contenido de Moto Seguro">'+
-'<div class="caption">'+
-'<b>📸 Moto Seguro</b>'+
-'</div>';
-
-}
-
+d.className=item.type==='video'?'promo':'review';
+d.innerHTML=item.type==='video'
+?'<video src="'+item.src+'" controls playsinline></video><div class="caption"><b>🎬 Promoción Moto Seguro</b><p>Contenido de nuestra comunidad</p></div>'
+:'<img src="'+item.src+'" alt="Contenido de Moto Seguro"><div class="caption"><b>📸 Moto Seguro</b></div>';
 r.appendChild(d);
-
 });
-
-
-const a=document.getElementById('adminlist');
-
-a.innerHTML=imgs.map((item,i)=>{
-
-if(item.type==='video'){
-
-return '<div class="adminitem">'+
-'<video src="'+item.src+'" controls style="width:100%;height:180px;object-fit:cover"></video>'+
-'<button onclick="removeImg('+i+')">Eliminar</button>'+
-'</div>';
-
-}
-
-return '<div class="adminitem">'+
-'<img src="'+item.src+'">'+
-'<button onclick="removeImg('+i+')">Eliminar</button>'+
-'</div>';
-
+document.getElementById('adminlist').innerHTML=imgs.map((item,i)=>{
+const m=item.type==='video'
+?'<video src="'+item.src+'" controls style="width:100%;height:180px;object-fit:cover"></video>'
+:'<img src="'+item.src+'">';
+return '<div class="adminitem">'+m+'<button onclick="removeImg('+i+')">Eliminar</button></div>';
 }).join('');
-
 }
-
 
 function addImages(e){
-
+if(!logged)return;
 [...e.target.files].forEach(f=>{
-
 const rd=new FileReader();
-
-rd.onload=()=>{
-
-imgs.push({
-src:rd.result,
-type:f.type.startsWith('video/')?'video':'image'
-});
-
-localStorage.setItem(
-'ms_imgs',
-JSON.stringify(imgs)
-);
-
-render();
-
-};
-
+rd.onload=()=>{imgs.push({src:rd.result,type:f.type.startsWith('video/')?'video':'image'});saveImgs();render()};
 rd.readAsDataURL(f);
-
 });
-
 e.target.value='';
-
 }
 
+function removeImg(i){if(!logged)return;imgs.splice(i,1);saveImgs();render()}
 
-function removeImg(i){
-
-imgs.splice(i,1);
-
-localStorage.setItem(
-'ms_imgs',
-JSON.stringify(imgs)
-);
-
-render();
-
-}
-
-
-function clearAll(){
-
-imgs=[];
-
-localStorage.removeItem('ms_imgs');
-
-render();
-
-}
-
+function clearAll(){if(!logged)return;imgs=[];localStorage.removeItem('ms_imgs');render()}
 
 function goHome(){
-
 document.getElementById('admin').classList.remove('show');
-
 document.getElementById('public').classList.remove('hide');
-
-document.getElementById('adminLogin').style.display='none';
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-
+closeLogin();
+window.scrollTo({top:0,behavior:'smooth'});
 }
-
 
 render();
 
-
-if(
-new URLSearchParams(window.location.search).get('admin')==='1'
-){
-
+if(new URLSearchParams(window.location.search).get('admin')==='1'){
 setTimeout(toggleAdmin,300);
-
 }
-
 </script>
-
 </body>
 </html>
