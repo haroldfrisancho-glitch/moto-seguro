@@ -1,168 +1,194 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Moto Seguro Cusco — Comunidad</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<title>Moto Seguro Cusco</title>
+
 <style>
-:root{color-scheme:light dark;--bg:#fff8ef;--surface:#fff;--surface2:#fff1df;--text:#241812;--muted:#74655d;--line:#ead8c7;--accent:#d94a3a;--accent2:#8b2d24;--shadow:0 12px 35px #5b2b1718}
-@media(prefers-color-scheme:dark){:root{--bg:#0d1115;--surface:#151b20;--surface2:#20282f;--text:#f5f7f8;--muted:#aab3bb;--line:#303941;--shadow:0 12px 35px #00000045}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
-#app{min-height:100vh;background:radial-gradient(circle at 10% 5%,#f7d98b55 0 15%,transparent 35%),radial-gradient(circle at 90% 12%,#8e5bb533 0 13%,transparent 32%),var(--bg)}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-weight:900;letter-spacing:-.5px;cursor:pointer}
-.brand span{color:var(--accent)}
-.socialtop{display:flex;align-items:center;gap:8px}
-.socialtop a{display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border-radius:999px;color:#fff;text-decoration:none;font-size:13px;font-weight:850}
-.ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
-.tk{background:#171717}
-.wrap{max-width:1080px;margin:auto;padding:28px 18px 60px}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center;padding:36px 0}
-.eyebrow{color:var(--accent2);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
-.hero h1{font-size:clamp(40px,7vw,76px);line-height:.95;margin:10px 0 18px;letter-spacing:-4px}
-.hero p{font-size:18px;color:var(--muted);max-width:620px}
-.btn{border:0;border-radius:14px;padding:13px 18px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-block}
-.primary{background:var(--accent);color:#fff}
-.qr{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow);text-align:center}
-section{margin-top:55px}
-section h2{font-size:32px;margin:0 0 8px;letter-spacing:-1px}
-section>p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px}
-.icon{font-size:28px}
-.card h3{margin:10px 0 7px}
-.card p{color:var(--muted);margin:0;line-height:1.5}
-.faq{margin-top:20px;display:grid;gap:10px}
-.faq details{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:0 18px}
-.faq summary{cursor:pointer;list-style:none;padding:18px 4px;font-weight:800;display:flex;justify-content:space-between;gap:15px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"+";color:var(--accent2);font-size:22px}
-.faq details[open] summary:after{content:"−"}
-.faq p{color:var(--muted);line-height:1.6;margin:0 4px 18px}
-.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:start;margin-top:20px}
-.review{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-.review img{width:100%;height:auto;display:block}
-.review .caption{padding:12px 15px}
-.stars{color:#f3a400;letter-spacing:2px}
-.footer{border-top:1px solid var(--line);margin-top:65px;padding-top:25px;color:var(--muted);font-size:13px}
-@media(max-width:760px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7f5;
+  color:#17251e;
+}
+header{
+  background:#064e3b;
+  color:white;
+  padding:22px 18px;
+  text-align:center;
+}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0;font-size:14px}
+main{
+  width:100%;
+  max-width:600px;
+  margin:auto;
+  padding:18px;
+}
+section{
+  background:white;
+  padding:22px 18px;
+  border-radius:18px;
+  margin-bottom:16px;
+  box-shadow:0 3px 12px #0000000c;
+}
+h2{font-size:22px;margin:0 0 14px}
+p{font-size:16px;line-height:1.6}
+.hero{
+  background:#e5f5ec;
+  text-align:center;
+  padding:28px 20px;
+}
+.hero h2{font-size:27px;line-height:1.25}
+.hero p{font-size:16px}
+.highlight{font-weight:bold;color:#087443}
+.btn{
+  display:block;
+  width:100%;
+  padding:16px 12px;
+  margin-top:14px;
+  border-radius:12px;
+  background:#16a34a;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+  font-size:16px;
+}
+.btn.secondary{background:#064e3b}
+.item{margin:13px 0;line-height:1.5}
+.number{font-weight:bold;color:#087443}
+footer{
+  text-align:center;
+  padding:25px 18px;
+  color:#64746a;
+  font-size:13px;
+}
 </style>
 </head>
+
 <body>
-<div id="app">
 
-<nav>
-<div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ir al inicio">🏍️ MOTO <span>SEGURO CUSCO</span></div>
-<div class="socialtop">
-<a class="ig" href="#" onclick="alert('Aquí irá el enlace real de Instagram.');return false">📸 IG</a>
-<a class="tk" href="https://www.tiktok.com/@henry_quintana1?_r=1&amp;_t=ZS-9AL22e2lvro" target="_blank" rel="noopener">🎵 TikTok</a>
-</div>
-</nav>
+<header>
+  <h1>🏍️ Moto Seguro</h1>
+  <p>Tu comunidad de confianza 💚</p>
+</header>
 
-<main class="wrap">
+<main>
 
-<section class="hero" style="margin-top:0">
-<div>
-<div class="eyebrow">Comunidad independiente</div>
-<h1>🏍️ Moto Seguro</h1>
-<h2 style="font-size:28px;margin:0 0 14px">Tu comunidad para movilizarte con mayor confianza</h2>
-<p>Moto Seguro es una comunidad independiente creada para facilitar la coordinación entre usuarios y pilotos, buscando ofrecer una experiencia de movilidad <b>más organizada, segura y confiable</b>.</p>
-</div>
-<div class="qr">
-<img src="logo.jpeg" alt="Logo Moto Seguro" style="width:100%;max-width:220px;border-radius:20px;display:block;margin:0 auto 14px">
-<b>Conoce Moto Seguro</b>
-</div>
+<section class="hero">
+  <h2>¡Que el tráfico no te detenga!</h2>
+
+  <p>
+    ¿Cansado de llegar tarde a clases,
+    al trabajo o a tus compromisos?
+  </p>
+
+  <p>
+    ¿Pierdes tiempo esperando transporte?
+  </p>
+
+  <h2 class="highlight">¡Conoce Moto Seguro! 💚</h2>
+
+  <p>
+    Somos una comunidad que conecta pasajeros
+    con pilotos evaluados, promoviendo la confianza,
+    responsabilidad y buena coordinación.
+  </p>
+
+  <p class="highlight">
+    Menos tráfico. Más tiempo para ti.
+  </p>
+
+  <a class="btn"
+     href="https://chat.whatsapp.com/PEGA_AQUI_TU_ENLACE"
+     target="_blank">
+     🟢 UNIRME AL GRUPO GENERAL
+  </a>
 </section>
 
 <section>
-<h2>🛡️ ¿Qué nos diferencia?</h2>
-<div class="cards">
-<div class="card"><div class="icon">✅</div><h3>Pilotos evaluados</h3><p>Los pilotos que desean formar parte de Moto Seguro pasan por un <b>proceso de evaluación y filtros previos</b> antes de incorporarse a la comunidad.</p></div>
-<div class="card"><div class="icon">🔎</div><h3>Verificación de información</h3><p>Solicitamos información del piloto y de su vehículo para contar con mejores referencias al momento de integrarlo a la comunidad.</p></div>
-<div class="card"><div class="icon">🏍️</div><h3>Conductores comprometidos</h3><p>Buscamos personas responsables, respetuosas y comprometidas con brindar un buen servicio a los integrantes.</p></div>
-<div class="card"><div class="icon">⭐</div><h3>Referencias de la comunidad</h3><p>Los integrantes pueden compartir sus experiencias y referencias, ayudando a mantener una comunidad basada en la confianza.</p></div>
-<div class="card"><div class="icon">📱</div><h3>Coordinación por WhatsApp</h3><p>La comunicación y coordinación se realiza mediante WhatsApp de manera sencilla y directa.</p></div>
-</div>
+  <h2>🛡️ ¿Qué nos diferencia?</h2>
+  <div class="item">✅ Pilotos evaluados</div>
+  <div class="item">🔎 Verificación de información</div>
+  <div class="item">🏍️ Conductores comprometidos</div>
+  <div class="item">⭐ Referencias de la comunidad</div>
+  <div class="item">📱 Coordinación por WhatsApp</div>
 </section>
 
-<section id="seleccion">
-<h2>🔐 ¿Cómo se seleccionan los pilotos?</h2>
-<p>Queremos que quienes formen parte de Moto Seguro cumplan ciertos requisitos.</p>
-<div class="cards">
-<div class="card"><h3>01. Registro del piloto</h3><p>El interesado proporciona sus datos y la información necesaria para postular.</p></div>
-<div class="card"><h3>02. Revisión de información</h3><p>Se revisan los datos proporcionados y la información relacionada con el piloto y su vehículo.</p></div>
-<div class="card"><h3>03. Evaluación</h3><p>Se evalúan aspectos como responsabilidad, documentación e información proporcionada.</p></div>
-<div class="card"><h3>04. Aprobación</h3><p>Los pilotos que cumplen con los criterios establecidos pueden ser incorporados a la comunidad.</p></div>
-</div>
-<div class="card" style="margin-top:14px"><b>Importante:</b> formar parte de Moto Seguro no significa que la comunidad garantice la conducta o seguridad absoluta de un piloto. La información proporcionada sirve como referencia para una mejor coordinación.</div>
+<section>
+  <h2>🔐 ¿Cómo se seleccionan los pilotos?</h2>
+  <p><span class="number">01.</span> Registro del piloto</p>
+  <p><span class="number">02.</span> Revisión de información</p>
+  <p><span class="number">03.</span> Evaluación</p>
+  <p><span class="number">04.</span> Aprobación</p>
+  <p>
+    La evaluación de ingreso no garantiza por sí sola
+    la conducta ni la seguridad absoluta de cada integrante.
+  </p>
 </section>
 
-<section id="como-funciona">
-<h2>💬 ¿Cómo funciona?</h2>
-<p>Es muy sencillo:</p>
-<div class="cards">
-<div class="card"><h3>1️⃣ Conoce la comunidad</h3><p>Revisa nuestra información y referencias.</p></div>
-<div class="card"><h3>2️⃣ Comunícate con nosotros</h3><p>Utiliza el botón de WhatsApp para realizar tus consultas.</p></div>
-<div class="card"><h3>3️⃣ Coordina con la comunidad</h3><p>La coordinación se realiza directamente mediante WhatsApp.</p></div>
-<div class="card"><h3>4️⃣ Comparte tu experiencia</h3><p>Tus referencias ayudan a que la comunidad siga creciendo.</p></div>
-</div>
+<section>
+  <h2>💬 ¿Cómo funciona?</h2>
+  <p>1️⃣ Conoce nuestra comunidad.</p>
+  <p>2️⃣ Comunícate con nosotros.</p>
+  <p>3️⃣ Coordina con la comunidad.</p>
+  <p>4️⃣ Comparte tu experiencia.</p>
+
+  <a class="btn"
+     href="https://chat.whatsapp.com/PEGA_AQUI_TU_ENLACE"
+     target="_blank">
+     💚 ENTRAR A WHATSAPP
+  </a>
 </section>
 
-<section id="referencias">
-<h2>⭐ Referencias de la comunidad</h2>
-<p>Conoce experiencias compartidas por integrantes de Moto Seguro.</p>
-<div class="reels" id="reviews"></div>
+<section>
+  <h2>🏍️ ¿Quieres ser piloto?</h2>
+  <p>Forma parte de Moto Seguro.</p>
+  <p>Buscamos personas responsables, respetuosas y comprometidas.</p>
+  <p>📋 Documentación en regla.</p>
+  <p>🏍️ Vehículo en condiciones adecuadas.</p>
+  <p>🤝 Compromiso con las normas de la comunidad.</p>
+
+  <a class="btn secondary"
+     href="https://wa.me/51999999999?text=Hola%2C%20quiero%20ser%20piloto%20de%20Moto%20Seguro"
+     target="_blank">
+     🟢 QUIERO SER PILOTO
+  </a>
 </section>
 
-<section id="comunidad">
-<div class="card" style="text-align:center;padding:32px">
-<div class="eyebrow">¿Quieres conocer Moto Seguro?</div>
-<h2>Únete a nuestra comunidad de WhatsApp</h2>
-<p>Conoce cómo funciona, realiza tus consultas y recibe información sobre la comunidad.</p>
-<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace real del grupo general de WhatsApp.');return false">🟢 UNIRME AL GRUPO GENERAL</a>
-</div>
+<section>
+  <h2>💚 ¿Quieres conocer Moto Seguro?</h2>
+  <p>Únete a nuestra comunidad y mantente informado.</p>
+
+  <a class="btn"
+     href="https://chat.whatsapp.com/PEGA_AQUI_TU_ENLACE"
+     target="_blank">
+     🟢 UNIRME AL GRUPO GENERAL
+  </a>
 </section>
 
-<section id="faq">
-<h2>Preguntas frecuentes</h2>
-<div class="faq">
-<details><summary>¿Qué es Moto Seguro?</summary><p>Moto Seguro es una comunidad independiente enfocada en facilitar la comunicación y coordinación entre sus integrantes.</p></details>
-<details><summary>¿Cómo puedo formar parte?</summary><p>Solo revisa la información de esta página y utiliza el botón de WhatsApp para acceder al canal de la comunidad.</p></details>
-<details><summary>¿Cómo funciona la coordinación?</summary><p>La comunicación y coordinación se realiza mediante WhatsApp.</p></details>
-<details><summary>¿Puedo ver referencias antes de unirme?</summary><p>Sí. En la sección de referencias encontrarás experiencias compartidas por integrantes de la comunidad.</p></details>
-</div>
+<section>
+  <h2>ℹ️ Sobre Moto Seguro</h2>
+  <p>
+    Moto Seguro es una comunidad independiente.
+    No pertenece, no representa ni está afiliada
+    a ninguna universidad, institución pública o empresa,
+    salvo que exista una autorización o acuerdo
+    expresamente comunicado.
+  </p>
 </section>
-
-<section id="pilotos">
-<div class="card">
-<div class="eyebrow">¿Quieres ser piloto?</div>
-<h2>🏍️ Forma parte de Moto Seguro</h2>
-<p>Si eres motociclista y quieres formar parte de nuestra comunidad como piloto, puedes registrarte y conocer el proceso de evaluación.</p>
-<h3>Buscamos pilotos que sean:</h3>
-<p>✔️ Responsables<br>✔️ Respetuosos<br>✔️ Comprometidos<br>✔️ Con documentación correspondiente<br>✔️ Con vehículo en condiciones adecuadas<br>✔️ Dispuestos a cumplir las reglas de la comunidad</p>
-<a class="btn primary" href="#" onclick="alert('Aquí irá el enlace para personas interesadas en ser pilotos.');return false">🟢 Quiero ser piloto</a>
-</div>
-</section>
-
-<div class="footer">
-<h3>ℹ️ Sobre Moto Seguro</h3>
-<p>Moto Seguro es una <b>comunidad independiente</b>. No pertenece, no representa ni está afiliada a ninguna universidad, institución pública o empresa, salvo que exista una autorización o acuerdo expresamente comunicado.</p>
-</div>
 
 </main>
-</div>
 
-<script>
-const REFS=['ref1.jpeg','ref2.jpeg','ref3.jpeg','ref4.jpeg'];
+<footer>
+  🏍️ Moto Seguro Cusco<br>
+  Comunidad independiente 💚
+</footer>
 
-const r=document.getElementById('reviews');
-REFS.forEach(src=>{
-const d=document.createElement('div');
-d.className='review';
-d.innerHTML='<img src="'+src+'" alt="Referencia de la comunidad"><div class="caption"><div class="stars">★★★★★</div></div>';
-r.appendChild(d);
-});
-</script>
 </body>
 </html>
