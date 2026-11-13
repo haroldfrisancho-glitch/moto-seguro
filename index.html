@@ -5,14 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#064e3b">
-<meta name="description" content="Moto Seguro Cusco, comunidad independiente que promueve una movilidad organizada y basada en la confianza.">
 <title>Moto Seguro Cusco</title>
 
 <style>
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{
  margin:0;
  font-family:Arial,Helvetica,sans-serif;
@@ -20,117 +17,87 @@ body{
  color:#17251e;
 }
 
+/* CABECERA */
 header{
  background:#064e3b;
  color:white;
- padding:14px 17px;
+ padding:16px;
 }
-
 .top{
- max-width:680px;
+ max-width:850px;
  margin:auto;
- display:flex;
+ display:grid;
+ grid-template-columns:105px 1fr auto;
  align-items:center;
- justify-content:space-between;
- gap:10px;
+ gap:15px;
 }
-
-/* ESPACIO PARA EL LOGO */
 .logo{
- width:72px;
- height:72px;
- border:2px dashed #a7d7b8;
- border-radius:14px;
+ width:105px;
+ height:105px;
  display:flex;
  align-items:center;
  justify-content:center;
- text-align:center;
- font-size:11px;
- color:#d5f4df;
- padding:5px;
- flex-shrink:0;
 }
-
 .logo img{
  width:100%;
  height:100%;
  object-fit:contain;
 }
-
-/* REDES SOCIALES */
+.tagline{
+ text-align:center;
+ font-size:17px;
+ line-height:1.35;
+ font-weight:bold;
+}
+.tagline span{color:#a7f3c2}
 .social{
  display:flex;
- gap:8px;
- flex-wrap:wrap;
- justify-content:flex-end;
+ flex-direction:column;
+ gap:9px;
 }
-
 .social a{
  color:white;
  text-decoration:none;
  border:1px solid #ffffff80;
- padding:10px 11px;
+ padding:10px 12px;
  border-radius:20px;
  font-size:13px;
+ text-align:center;
 }
 
 /* CONTENIDO */
 main{
- max-width:680px;
+ max-width:750px;
  margin:auto;
  padding:16px;
 }
-
 section{
  background:white;
  padding:22px 18px;
- border-radius:18px;
+ border-radius:19px;
  margin-bottom:16px;
- box-shadow:0 3px 12px #0000000b;
+ box-shadow:0 3px 14px #0000000b;
 }
-
-h1{
- font-size:27px;
- margin:0 0 12px;
-}
-
-h2{
- font-size:22px;
- margin:0 0 14px;
- line-height:1.3;
-}
-
-p{
- font-size:15px;
- line-height:1.65;
-}
-
 .hero{
  text-align:center;
- background:#e5f5ec;
- padding:29px 19px;
+ background:linear-gradient(145deg,#e5f5ec,#f5fff8);
+ padding:30px 19px;
 }
-
 .hero h1{
  font-size:29px;
  line-height:1.25;
+ margin:0 0 14px;
 }
-
 .hero h2{
  font-size:23px;
-}
-
-.green{
  color:#087443;
- font-weight:bold;
+ margin:18px 0 10px;
 }
-
-.hero .slogan{
- font-size:17px;
- font-weight:bold;
- color:#087443;
- margin-top:20px;
+.hero p{
+ font-size:15px;
+ line-height:1.6;
 }
+.green{color:#087443;font-weight:bold}
 
 /* BOTONES */
 .btn{
@@ -141,23 +108,81 @@ p{
  color:white;
  background:#16a34a;
  padding:16px 12px;
- border-radius:12px;
+ border-radius:13px;
  font-weight:bold;
- margin-top:15px;
+ margin-top:16px;
  font-size:15px;
 }
+.btn.dark{background:#064e3b}
 
-.btn.dark{
- background:#064e3b;
+/* TARJETAS VISUALES */
+.section-title{
+ text-align:center;
+ margin:0 0 8px;
+ font-size:22px;
+}
+.section-subtitle{
+ text-align:center;
+ font-size:14px;
+ color:#64746a;
+ margin:0 0 20px;
+}
+.features{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+.feature{
+ background:#eff8f1;
+ padding:17px 10px;
+ border-radius:15px;
+ text-align:center;
+ min-height:120px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ gap:9px;
+}
+.feature .icon{
+ font-size:32px;
+}
+.feature strong{
+ font-size:14px;
+ line-height:1.35;
 }
 
-.item{
- margin:13px 0;
- line-height:1.5;
- font-size:15px;
+/* COMO FUNCIONA */
+.steps{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+.step{
+ border:1px solid #e0eee4;
+ background:#fbfefc;
+ border-radius:15px;
+ padding:17px 12px;
+ text-align:center;
+}
+.step .icon{
+ font-size:32px;
+ display:block;
+ margin-bottom:9px;
+}
+.step .number{
+ color:#087443;
+ font-weight:bold;
+ font-size:13px;
+}
+.step strong{
+ display:block;
+ font-size:14px;
+ margin-top:6px;
+ line-height:1.4;
 }
 
-/* GALERÍA DE RECOMENDACIONES */
+/* GALERÍA */
 .gallery{
  display:flex;
  gap:12px;
@@ -166,16 +191,11 @@ p{
  scroll-snap-type:x mandatory;
  -webkit-overflow-scrolling:touch;
 }
-
-.gallery::-webkit-scrollbar{
- height:5px;
-}
-
+.gallery::-webkit-scrollbar{height:5px}
 .gallery::-webkit-scrollbar-thumb{
  background:#a9c9b5;
  border-radius:10px;
 }
-
 .photo{
  flex:0 0 78%;
  max-width:300px;
@@ -192,32 +212,55 @@ p{
  scroll-snap-align:start;
  overflow:hidden;
 }
-
 .photo img{
  width:100%;
  height:100%;
  object-fit:contain;
 }
-
 .hint{
  color:#718078;
  font-size:12px;
  text-align:center;
 }
 
-/* PIE DE PÁGINA */
+/* PILOTOS */
+.item{
+ margin:12px 0;
+ line-height:1.5;
+ font-size:15px;
+}
+
+/* PIE */
 footer{
  text-align:center;
- padding:26px 15px;
+ padding:25px 15px;
  color:#64746a;
  font-size:13px;
  line-height:1.7;
 }
 
-@media(max-width:380px){
- .logo{width:60px;height:60px}
- .social a{font-size:12px;padding:8px}
+/* CELULARES */
+@media(max-width:560px){
+ header{padding:13px 12px}
+ .top{
+  grid-template-columns:75px 1fr auto;
+  gap:8px;
+ }
+ .logo{width:75px;height:75px}
+ .tagline{font-size:14px}
+ .social{gap:6px}
+ .social a{font-size:11px;padding:8px 7px}
  .hero h1{font-size:26px}
+ .hero h2{font-size:21px}
+ main{padding:12px}
+ section{padding:20px 15px}
+}
+@media(max-width:350px){
+ .top{grid-template-columns:65px 1fr auto;gap:5px}
+ .logo{width:65px;height:65px}
+ .tagline{font-size:12px}
+ .social a{font-size:10px;padding:7px 5px}
+ .feature strong,.step strong{font-size:12px}
 }
 </style>
 </head>
@@ -227,22 +270,24 @@ footer{
 <header>
  <div class="top">
 
-  <!-- COLOCA AQUÍ TU LOGO -->
+  <!-- LOGO: SUBE TU ARCHIVO COMO logo.png -->
   <div class="logo">
    <img src="logo.png" alt="Logo Moto Seguro">
   </div>
 
-  <!-- ENLACES DE REDES SOCIALES -->
+  <!-- FRASE CENTRAL -->
+  <div class="tagline">
+   ¿SIN CARRO Y CON PRISA?
+   <br>
+   <span>¡SOMOS MOTO SEGURO! 💚</span>
+  </div>
+
+  <!-- REDES SOCIALES -->
   <div class="social">
    <a href="https://www.tiktok.com/"
-      target="_blank" rel="noopener">
-      🎵 TikTok
-   </a>
-
+      target="_blank" rel="noopener">🎵 TikTok</a>
    <a href="https://www.instagram.com/"
-      target="_blank" rel="noopener">
-      📸 Instagram
-   </a>
+      target="_blank" rel="noopener">📸 Instagram</a>
   </div>
 
  </div>
@@ -250,32 +295,30 @@ footer{
 
 <main>
 
-<!-- PRESENTACIÓN PRINCIPAL -->
+<!-- PRESENTACIÓN -->
 <section class="hero">
 
  <h1>🏍️ ¿Vas con prisa a la universidad?</h1>
 
  <p>
-  ¿Tienes clases y aún no encuentras cómo llegar?
+ ¿Tienes clases y aún no encuentras cómo llegar?
  </p>
 
  <p>
-  ¿No hay carro? ¿El tráfico te está ganando?
-  ¿Ya se te hace tarde?
+ ¿No hay carro? ¿El tráfico te está ganando?
+ ¿Ya se te hace tarde?
  </p>
 
- <h2 class="green">
-  ¡Tranqui! Somos Moto Seguro 💚
- </h2>
+ <h2>¡Tranqui! Conoce Moto Seguro 💚</h2>
 
  <p>
-  Somos una comunidad independiente que promueve
-  la confianza, responsabilidad y buena coordinación
-  entre sus integrantes.
+ Somos una comunidad independiente que promueve
+ la confianza, responsabilidad y buena coordinación
+ entre sus integrantes.
  </p>
 
- <p class="slogan">
-  Menos esperas, más tiempo para tus clases.
+ <p class="green">
+ Menos esperas, más tiempo para tus clases.
  </p>
 
  <a class="btn"
@@ -286,28 +329,84 @@ footer{
 
 </section>
 
-<!-- BENEFICIOS -->
+<!-- DIFERENCIAS -->
 <section>
 
- <h2>🛡️ ¿Qué nos diferencia?</h2>
+ <h2 class="section-title">🛡️ ¿Qué nos diferencia?</h2>
+ <p class="section-subtitle">
+ Confianza y compromiso en nuestra comunidad
+ </p>
 
- <div class="item">✅ Pilotos evaluados</div>
- <div class="item">🔎 Verificación de información</div>
- <div class="item">🏍️ Conductores comprometidos</div>
- <div class="item">⭐ Referencias de la comunidad</div>
- <div class="item">📱 Coordinación por WhatsApp</div>
+ <div class="features">
 
+  <div class="feature">
+   <span class="icon">🏍️</span>
+   <strong>Pilotos evaluados</strong>
+  </div>
+
+  <div class="feature">
+   <span class="icon">🔎</span>
+   <strong>Información verificada</strong>
+  </div>
+
+  <div class="feature">
+   <span class="icon">🤝</span>
+   <strong>Conductores comprometidos</strong>
+  </div>
+
+  <div class="feature">
+   <span class="icon">⭐</span>
+   <strong>Referencias reales</strong>
+  </div>
+
+  <div class="feature">
+   <span class="icon">📱</span>
+   <strong>Coordinación por WhatsApp</strong>
+  </div>
+
+  <div class="feature">
+   <span class="icon">💚</span>
+   <strong>Una comunidad de confianza</strong>
+  </div>
+
+ </div>
 </section>
 
 <!-- FUNCIONAMIENTO -->
 <section>
 
- <h2>💬 ¿Cómo funciona?</h2>
+ <h2 class="section-title">💬 ¿Cómo funciona?</h2>
+ <p class="section-subtitle">
+ ¡Es muy sencillo!
+ </p>
 
- <p>1️⃣ Conoce nuestra comunidad.</p>
- <p>2️⃣ Ingresa al grupo general.</p>
- <p>3️⃣ Comunícate y coordina.</p>
- <p>4️⃣ Comparte tu experiencia.</p>
+ <div class="steps">
+
+  <div class="step">
+   <span class="icon">👀</span>
+   <span class="number">PASO 01</span>
+   <strong>Conoce la comunidad</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">📲</span>
+   <span class="number">PASO 02</span>
+   <strong>Ingresa al grupo general</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">🤝</span>
+   <span class="number">PASO 03</span>
+   <strong>Comunícate y coordina</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">⭐</span>
+   <span class="number">PASO 04</span>
+   <strong>Comparte tu experiencia</strong>
+  </div>
+
+ </div>
 
  <a class="btn"
  href="https://chat.whatsapp.com/PEGA_AQUI_TU_ENLACE"
@@ -317,77 +416,68 @@ footer{
 
 </section>
 
-<!-- GALERÍA DE 10 RECOMENDACIONES -->
+<!-- RECOMENDACIONES -->
 <section>
 
- <h2>⭐ Lo que dice nuestra comunidad</h2>
+ <h2 class="section-title">⭐ Experiencias de nuestra comunidad</h2>
 
- <p>
- Las experiencias de quienes forman parte
- de Moto Seguro.
+ <p class="section-subtitle">
+ Conoce las recomendaciones de nuestros integrantes.
  </p>
 
  <div class="gallery">
 
-  <div class="photo">
-   <img src="fotos/recomendacion1.jpg" alt="Recomendación 1">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion2.jpg" alt="Recomendación 2">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion3.jpg" alt="Recomendación 3">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion4.jpg" alt="Recomendación 4">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion5.jpg" alt="Recomendación 5">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion6.jpg" alt="Recomendación 6">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion7.jpg" alt="Recomendación 7">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion8.jpg" alt="Recomendación 8">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion9.jpg" alt="Recomendación 9">
-  </div>
-
-  <div class="photo">
-   <img src="fotos/recomendacion10.jpg" alt="Recomendación 10">
-  </div>
+  <div class="photo"><img src="fotos/recomendacion1.jpg" alt="Recomendación 1"></div>
+  <div class="photo"><img src="fotos/recomendacion2.jpg" alt="Recomendación 2"></div>
+  <div class="photo"><img src="fotos/recomendacion3.jpg" alt="Recomendación 3"></div>
+  <div class="photo"><img src="fotos/recomendacion4.jpg" alt="Recomendación 4"></div>
+  <div class="photo"><img src="fotos/recomendacion5.jpg" alt="Recomendación 5"></div>
+  <div class="photo"><img src="fotos/recomendacion6.jpg" alt="Recomendación 6"></div>
+  <div class="photo"><img src="fotos/recomendacion7.jpg" alt="Recomendación 7"></div>
+  <div class="photo"><img src="fotos/recomendacion8.jpg" alt="Recomendación 8"></div>
+  <div class="photo"><img src="fotos/recomendacion9.jpg" alt="Recomendación 9"></div>
+  <div class="photo"><img src="fotos/recomendacion10.jpg" alt="Recomendación 10"></div>
 
  </div>
 
- <p class="hint">
-  ← Desliza para ver más recomendaciones →
- </p>
+ <p class="hint">← Desliza para ver más recomendaciones →</p>
 
 </section>
 
 <!-- SELECCIÓN DE PILOTOS -->
 <section>
 
- <h2>🔐 ¿Cómo se seleccionan los pilotos?</h2>
+ <h2 class="section-title">🔐 Selección de pilotos</h2>
 
- <p><span class="green">01.</span> Registro del piloto.</p>
- <p><span class="green">02.</span> Revisión de información.</p>
- <p><span class="green">03.</span> Evaluación.</p>
- <p><span class="green">04.</span> Aprobación.</p>
+ <div class="steps">
 
- <p>
+  <div class="step">
+   <span class="icon">📝</span>
+   <span class="number">01</span>
+   <strong>Registro</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">🔎</span>
+   <span class="number">02</span>
+   <strong>Revisión de información</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">📋</span>
+   <span class="number">03</span>
+   <strong>Evaluación</strong>
+  </div>
+
+  <div class="step">
+   <span class="icon">✅</span>
+   <span class="number">04</span>
+   <strong>Aprobación</strong>
+  </div>
+
+ </div>
+
+ <p class="hint">
  La evaluación de ingreso no garantiza por sí sola
  la conducta ni la seguridad absoluta de cada integrante.
  </p>
@@ -397,9 +487,11 @@ footer{
 <!-- NUEVOS PILOTOS -->
 <section>
 
- <h2>🏍️ ¿Quieres ser piloto?</h2>
+ <h2 class="section-title">🏍️ ¿Quieres ser piloto?</h2>
 
- <h2 class="green">¡Forma parte de Moto Seguro!</h2>
+ <h2 class="green" style="text-align:center">
+ ¡Forma parte de Moto Seguro!
+ </h2>
 
  <p>
  Buscamos personas responsables, respetuosas
@@ -410,7 +502,6 @@ footer{
  <div class="item">🏍️ Vehículo en condiciones adecuadas.</div>
  <div class="item">🤝 Compromiso con las normas.</div>
 
- <!-- ENLACE DE INSCRIPCIÓN PARA PILOTOS -->
  <a class="btn dark"
  href="https://forms.gle/PEGA_AQUI_TU_ENLACE"
  target="_blank" rel="noopener">
@@ -419,27 +510,10 @@ footer{
 
 </section>
 
-<!-- INVITACIÓN FINAL -->
-<section>
-
- <h2>💚 ¡Únete a Moto Seguro!</h2>
-
- <p>
- Sé parte de nuestra comunidad y mantente informado.
- </p>
-
- <a class="btn"
- href="https://chat.whatsapp.com/PEGA_AQUI_TU_ENLACE"
- target="_blank" rel="noopener">
- 🟢 UNIRME AL GRUPO GENERAL
- </a>
-
-</section>
-
 <!-- INFORMACIÓN -->
 <section>
 
- <h2>ℹ️ Sobre Moto Seguro</h2>
+ <h2 class="section-title">ℹ️ Sobre Moto Seguro</h2>
 
  <p>
  Moto Seguro es una comunidad independiente.
